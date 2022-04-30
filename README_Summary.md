@@ -20,42 +20,56 @@ Below is the summary of my findings.
 **Question:** Do you see any patterns, long-term and/or short? 
 
 **Answer:** 
-- **Short Term Patterns** There is a definite short term pattern showing a decline of the value of the CAD vs the JPY for the period 1991 to mid 1995. It can be seen from the plot that 1 Canadian dollar was buying around 138 Japanese yen. Over the next five and a half years this fell dramatically to the point that 1 Canadian dollar was buying around 60 Japanese Yen. Another short term pattern identified is a short term peak in the strength of the CAD vs the JPY around the start of 2018. Otherwise it can be noticed that in the short term there is a lot of volatility which is pretty typical for common currency pairs. 
+- **Short Term Patterns** There is definitly a short term pattern. Graph is showing a decline of the value of CAD.  There is a peak arround April of 1990 and steady decline of CAd value over 5 years. Usisng .max(()/.min(), I can see that 1 CAD was buying arround ~138 yen.  But it went down to ~58 arround April of 1995. Also, there are couple of short term peaks and dips between 2007-2009 and between 2016-2018. Otherwise it can be noticed that in the short term there is a lot of volatility which is pretty typical for common currency pairs. Below table shows the actual data.
 
-- **Long Term Patterns** Observing the overall pattern for the CAD/JPY over the long term it can be seen that there is a general downward trend from 1990 to 2020. Excluding the significant downward trend from 1990 to 1996 and the peak in 2008 the trend is generally pretty flat over the long term. For example the value of the CAD vs the JPY in 2004 is very similar to the value in 2020.
+|   Date             | Price    Open    High     Low  |
+| ------------------ | ------------------------------ |
+| Peak - 1990-04-17  | 137.28  137.22  137.28  137.22 |
+| Drop - 1995-04-18  |  58.88   59.84   60.12   58.58 |
+|                    |                                |
+| Peak - 2007-11-06  | 124.43  122.59  124.56  122.35 |
+| Drop - 2009-01-22  |  70.83   71.17   71.32   69.26 |
+
+
+
+- **Long Term Patterns** Observing the overall pattern for the CAD/JPY over the long term it can be seen that there is a general downward trend from 1990 to 2020. Excluding the significant downward trend from 1990 to 1995 and the peak in 2009 the trend is generally pretty flat over the long term. For example the value of the CAD vs the JPY in 2004 is very similar to the value in 2020.
+
 
 **Question:** Do you see any patterns, long-term and/or short?
 
 **Answer:** 
-- **Short Term Patterns** Using the trend we can remove a lot of the short term volatility which helps us look at the overall trends. It can be seen that there is generally an upward trend that follows a downward trend. The duration of these trends are generally over a six month duration. Excluding 2020 it is observed that there is a shorter term trend in that the value of the CAD is stronger against the JPY at the start of each year compared to the end.  
+- **Short Term Patterns** Using the trend we can remove a lot of the short term volatility which helps us look at the overall trends. It can be seen that there is generally an upward trend that follows a downward trend. The duration of these trends are generally over a six month period. It is observed that there is a shorter term trend in that the value of the CAD is stronger against the JPY at the start of each year compared to the end excluding 2020.  
 
-- **Long Term Patterns** Observing the overall pattern for the CAD/JPY over the long term for this five year period it can be summarised as an overal downtrend. This is most prevalend early in the sample, with the last 4 years of the sample showing short term volatility but fairly flat. 
+- **Long Term Patterns** Observing the overall pattern for the CAD/JPY over the long term for this five year period it can be summarised as an overal downward trend. This is most prevalend early in the sample, with the last 4 years of the sample showing short term volatility but fairly flat. 
+
 
 **Question:** Based on the p-value, is the model a good fit?
 
 **Answer:** Based on the p-value this model does not appear to be a good fit. The p-value for Lag 2 is 0.140. Any p-value higher than 0.05 would be considered not significant. The p-value of Lag 1 as you can see is 0.00, this indicates a model using order=(1, 1) would be a better fit.
 
+
+
 **Question:** What does the model forecast will happen to the Japanese Yen in the near term?
 
 **Answer:** 
-1. Based on the p-value this model does not appear to be a good fit. The p-value for all Lags 2 is > 0.05. Any p-value > than 0.05 would be considered not significant. 
-
+1. Based on the p-value this model does not appear to be a good fit. The p-value for all Lags 2 is > 0.05. Any p-value > than 0.05 would be considered not significant.
 2. The model forcasts a downward trend of Japanese Yen Price in the near term.
+
 
 **Question:** What does the model forecast will happen to volatility in the near term?
 
-**Answer:** The model forecasts **increased** volatility in the near term. 
+**Answer:** The model forecasts **increased** volatility in the near term.  
 
 # Conclusions
 
 1. Based on your time series analysis, would you buy the yen now?
-    * No, our modelling for returns was not a good fit, along with additional moddelling predicting an increase in volatility in the short term.
+    * Based on the analysis, I will not buy yen. Our modelling for returns was not a good fit, along with additional moddelling, there is a prediction for an increase in volatility in the short term. 
 
 2. Is the risk of the yen expected to increase or decrease?
-    * The volatility if the yen and therefore risk is expected to increase.
+    * The risk is expected to increase.
 
 3. Based on the model evaluation, would you feel confident in using these models for trading?
-    * No I wouldnt be confident trading with these models. Both the ARMA and ARIMA models where not a good fit for this data as evident from the p-values. The GARCH model was a better fit for the data, with the results showing us there would be an increase in volatility. I would not be confident trading on volatility predictions alone. 
+    * No I am not confident trading with these models. ARMA and ARIMA models were not a good fit for this data as evident from the p-values. The GARCH model was a better fit for the data, with the results showing us there would be an increase in volatility. I would not be confident trading on volatility predictions alone. 
 
 4. Does this model perform better or worse on out-of-sample data as compared to in-sample data?
-    * In general, a lower RMSE is better than a higher one. In conclusion the "out of sample" Test Data performed better then the "In Sample" Training Data. The difference between the two are Test Data (out of sample) RMSE = 0.6445805658569028 vs Training Data (in sample) MSE =  0.841994632894117
+    * In general, a lower RMSE is better than a higher RMSE.  The calculated RMSE for 'out-of-sample RMSE' = 0.9706588697314916 and for 'in-sample RMSE' = 1.2062264273459937. So based on the calculated RMSE values, we can say that 'out of sample test data' performed better than 'in sample training data' 
